@@ -3,7 +3,7 @@ from pprint import pprint
 import csv
 import re
 
-with open("phonebook_raw.csv") as f:
+with open("phonebook_raw.csv", encoding="utf-8") as f:
   rows = csv.reader(f, delimiter=",")
   contacts_list = list(rows)
 pprint(contacts_list)
@@ -48,9 +48,9 @@ def union(contacts: list):
 
 ## 2. Сохраните получившиеся данные в другой файл.
 ## Код для записи файла в формате CSV:
-with open("phonebook_new.csv", "w") as f:
+with open("phonebook_new.csv", "w", encoding="utf-8") as f:
   datawriter = csv.writer(f, delimiter=',')
   
 ## Вместо contacts_list подставьте свой список:
-  datawriter.writerows(contacts_list)
+  datawriter.writerows(main(contacts_list))
 
